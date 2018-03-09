@@ -1,7 +1,12 @@
+apply plugin: 'org.springframework.boot'
+
 description = 'Example Application Server'
 
 dependencies {
-    compile libs.jee
     compile libs.frostnova.check
+    compile libs.springBoot
+    compile libs.springEurekaClient
+
     testCompile libs.testbase
+    testCompile libs.springBootTest
 }

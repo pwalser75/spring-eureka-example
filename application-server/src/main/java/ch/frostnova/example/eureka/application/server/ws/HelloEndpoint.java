@@ -9,12 +9,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Notes web service endpoint <p>
- * Full local path: <a href="https://localhost/api/notes">https://localhost/api/notes</a>
+ * Hello web service endpoint
  */
 @Component
 @Path("hello")
-public class NotesEndpoint {
+public class HelloEndpoint {
 
     /**
      * List notes

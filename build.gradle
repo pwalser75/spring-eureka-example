@@ -11,7 +11,7 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springVersion}"
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.17.0'
-        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:2.2.+'
+        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:3.0.1'
     }
 }
 
@@ -60,7 +60,7 @@ ext.libs = [
     jee               : "javax:javaee-api:7.0",
     testbase          : [
             "junit:junit:4.12",
-            "org.mockito:mockito-core:2.12.0"
+            "org.mockito:mockito-core:2.15.0"
     ],
     springBoot        : [
             "org.springframework.boot:spring-boot-starter-jersey:${springVersion}",
@@ -78,6 +78,7 @@ ext.libs = [
             "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}"
     ],
     springEurekaClient: [
+            "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
 
     ],
     frostnova         : [
@@ -88,4 +89,14 @@ ext.libs = [
 task wrapper(type: Wrapper) {
     gradleVersion = '4.5.1'
     distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+task startEureka(dependsOn: ':eureka-server:bootRun') {
+    group = 'Start/Run'
+    description = 'Start the Eureka server'
+}
+
+task startApplicationServer(dependsOn: ':application-server:bootRun') {
+    group = 'Start/Run'
+    description = 'Start the Application server'
 }

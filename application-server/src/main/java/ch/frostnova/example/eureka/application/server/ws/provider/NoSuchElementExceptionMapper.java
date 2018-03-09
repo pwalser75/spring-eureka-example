@@ -1,4 +1,4 @@
-package org.test.spring.boot.project.ws.provider;
+package ch.frostnova.example.eureka.application.server.ws.provider;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;

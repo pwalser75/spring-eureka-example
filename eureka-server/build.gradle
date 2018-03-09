@@ -4,9 +4,6 @@ apply plugin: 'io.spring.dependency-management'
 description = 'Example Eureka Server'
 
 dependencies {
-    compile libs.jee
-    compile libs.frostnova.check
-    //compile libs.springBoot
     compile libs.springEurekaServer
 
     testCompile libs.testbase

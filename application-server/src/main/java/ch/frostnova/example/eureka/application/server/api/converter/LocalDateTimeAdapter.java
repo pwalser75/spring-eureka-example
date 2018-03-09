@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 /**
  * JAXB adapter for {@link LocalDateTime}
  */
-public class LocalDateTimeXMLAdapter extends XmlAdapter<String, LocalDateTime> {
+public class LocalDateTimeAdapter extends XmlAdapter<String, LocalDateTime> {
 
     @Override
     public String marshal(LocalDateTime value) throws Exception {
