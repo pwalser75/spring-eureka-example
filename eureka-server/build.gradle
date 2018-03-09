@@ -1,0 +1,7 @@
+description = 'Example Eureka Server'
+
+dependencies {
+    compile libs.jee
+    compile libs.frostnova.check
+    testCompile libs.testbase
+}

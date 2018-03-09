@@ -1,0 +1,7 @@
+description = 'Example Application Client'
+
+dependencies {
+    compile libs.jee
+    compile libs.frostnova.check
+    testCompile libs.testbase
+}
