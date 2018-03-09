@@ -3,9 +3,12 @@ apply plugin: 'org.springframework.boot'
 description = 'Example Application Server'
 
 dependencies {
+    compile project(':application-api')
+
     compile libs.frostnova.check
     compile libs.springBoot
     compile libs.springEurekaClient
+    compile libs.springBootActuator
 
     testCompile libs.testbase
     testCompile libs.springBootTest

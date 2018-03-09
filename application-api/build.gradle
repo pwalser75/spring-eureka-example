@@ -1,0 +1,7 @@
+description = 'Example Application API'
+
+dependencies {
+    compileOnly libs.jee
+
+    testCompile libs.testbase
+}

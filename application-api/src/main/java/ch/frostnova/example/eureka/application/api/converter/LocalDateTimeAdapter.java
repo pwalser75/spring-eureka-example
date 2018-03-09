@@ -1,4 +1,4 @@
-package ch.frostnova.example.eureka.application.server.api.converter;
+package ch.frostnova.example.eureka.application.api.converter;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.time.LocalDateTime;

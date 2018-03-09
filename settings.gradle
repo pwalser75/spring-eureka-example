@@ -13,5 +13,6 @@ def addProject(path) {
 }
 
 addProject ':eureka-server'
+addProject ':application-api'
 addProject ':application-server'
 addProject ':application-client'

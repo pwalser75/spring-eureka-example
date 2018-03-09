@@ -57,33 +57,39 @@ dependencyUpdates.resolutionStrategy = {
 }
 
 ext.libs = [
-    jee               : "javax:javaee-api:7.0",
-    testbase          : [
-            "junit:junit:4.12",
-            "org.mockito:mockito-core:2.15.0"
-    ],
-    springBoot        : [
-            "org.springframework.boot:spring-boot-starter-jersey:${springVersion}",
-            'javax.el:javax.el-api:2.2.4',
-            'org.glassfish.web:javax.el:2.2.4'
-    ],
-    springBootActuator: [
-            "org.springframework.boot:spring-boot-starter-actuator:${springVersion}",
-            "org.springframework.boot:spring-boot-starter-web:${springVersion}"
-    ],
-    springBootTest    : [
-            "org.springframework.boot:spring-boot-starter-test:${springVersion}"
-    ],
-    springEurekaServer: [
-            "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}"
-    ],
-    springEurekaClient: [
-            "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
-
-    ],
-    frostnova         : [
-            check: "ch.frostnova:check:1.0.0-RC1"
-    ]
+        jee               : "javax:javaee-api:7.0",
+        testbase          : [
+                "junit:junit:4.12",
+                "org.mockito:mockito-core:2.15.0"
+        ],
+        springBoot        : [
+                "org.springframework.boot:spring-boot-starter-jersey:${springVersion}",
+                'javax.el:javax.el-api:2.2.4',
+                'org.glassfish.web:javax.el:2.2.4'
+        ],
+        springBootActuator: [
+                "org.springframework.boot:spring-boot-starter-actuator:${springVersion}",
+                "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+        ],
+        springBootApp    : [
+                "org.springframework.cloud:spring-cloud-starter-feign:${springCloudVersion}",
+                "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
+        ],
+        springBootTest    : [
+                "org.springframework.boot:spring-boot-starter-test:${springVersion}"
+        ],
+        springBootJerseyClient: [
+                "org.springframework.boot:spring-boot-starter-jersey:${springVersion}"
+        ],
+        springEurekaServer: [
+                "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}"
+        ],
+        springEurekaClient: [
+                "org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}"
+        ],
+        frostnova         : [
+                check: "ch.frostnova:check:1.0.0-RC1"
+        ]
 ]
 
 task wrapper(type: Wrapper) {
@@ -93,10 +99,13 @@ task wrapper(type: Wrapper) {
 
 task startEureka(dependsOn: ':eureka-server:bootRun') {
     group = 'Start/Run'
-    description = 'Start the Eureka server'
+    description = 'Start the Eureka Server'
 }
-
 task startApplicationServer(dependsOn: ':application-server:bootRun') {
     group = 'Start/Run'
-    description = 'Start the Application server'
+    description = 'Start the Application Server'
+}
+task startApplicationClient(dependsOn: ':application-client:bootRun') {
+    group = 'Start/Run'
+    description = 'Start the Application Client'
 }

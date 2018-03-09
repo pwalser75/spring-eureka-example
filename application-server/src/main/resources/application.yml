@@ -9,3 +9,36 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
     instance:
       preferIpAddress: true
+  eureka:
+    instance:
+      metadataMap:
+        management.port: 9000
+
+# Spring boot actuator configuration
+
+management:
+  port: 9000
+  security:
+    enabled: false
+
+info:
+  app:
+    name: "Application Server"
+    description: "Example application server"
+
+endpoints:
+  health.enabled: true
+  info.enabled: true
+  metrics.enabled: true
+  autoconfig.enabled: false
+  beans.enabled: false
+  configprops.enabled: false
+  dump.enabled: false
+  env.enabled: false
+  mappings.enabled: false
+  shutdown.enabled: false
+  trace.enabled: false
+  loggers.enabled: false
+  auditevents.enabled: false
+  heapdump.enabled: false
+  error.enabled: false

@@ -1,7 +1,13 @@
+apply plugin: 'org.springframework.boot'
+
 description = 'Example Application Client'
 
 dependencies {
-    compile libs.jee
+    compile project(':application-api')
+
     compile libs.frostnova.check
+    compile libs.springBootApp
+    compile libs.springBootJerseyClient
+
     testCompile libs.testbase
 }

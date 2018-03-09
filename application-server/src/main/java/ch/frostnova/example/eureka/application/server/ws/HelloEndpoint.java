@@ -1,6 +1,6 @@
 package ch.frostnova.example.eureka.application.server.ws;
 
-import ch.frostnova.example.eureka.application.server.api.model.Message;
+import ch.frostnova.example.eureka.application.api.model.Message;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;

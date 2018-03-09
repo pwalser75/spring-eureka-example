@@ -1,6 +1,6 @@
-package ch.frostnova.example.eureka.application.server.api.model;
+package ch.frostnova.example.eureka.application.api.model;
 
-import ch.frostnova.example.eureka.application.server.api.converter.LocalDateTimeAdapter;
+import ch.frostnova.example.eureka.application.api.converter.LocalDateTimeAdapter;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
